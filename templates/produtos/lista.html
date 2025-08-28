@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Produtos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: .5rem 1rem; text-align: left; }
+  </style>
+</head>
+<body>
+  <h1>Lista de Produtos</h1>
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Nome</th><th>Preço (R$)</th></tr>
+    </thead>
+    <tbody>
+      {% for p in produtos %}
+        <tr>
+          <td>{{ p.id }}</td>
+          <td>{{ p.nome }}</td>
+          <td>{{ p.preco }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="3">Nenhum produto cadastrado.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>
+
